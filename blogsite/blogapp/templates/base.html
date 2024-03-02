@@ -2,88 +2,90 @@
 <html lang="en">
 
 <head>
-  <style type="text/css">
-    /* The sidebar menu */
-    .sidenav {
-      height: 100%;
-      /* Full-height: remove this if you want "auto" height */
-      width: 160px;
-      /* Set the width of the sidebar */
-      position: fixed;
-      /* Fixed Sidebar (stay in place on scroll) */
-      z-index: 1;
-      /* Stay on top */
-      top: 0;
-      /* Stay at the top */
-      left: 0;
-      background-color: #111;
-      /* Black */
-      overflow-x: hidden;
-      /* Disable horizontal scroll */
-      padding-top: 20px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Page Title{% endblock %}</title>
 
-    /* The navigation menu links */
-    .sidenav a {
-      padding: 6px 8px 6px 16px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-    }
+    <!-- Bootstrap CSS (you can replace it with the actual CSS used by the Microsoft Learn site) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
-    /* When you mouse over the navigation links, change their color */
-    .sidenav a:hover {
-      color: #f1f1f1;
-    }
+    <!-- Your custom styles -->
+    <style>
+        /* Add your custom styles here */
+        body {
+            padding-top: 56px;
+            /* Adjust according to your site's header height */
+        }
 
-    /* Style page content */
-    .main {
-      margin-left: 160px;
-      /* Same as the width of the sidebar */
-      padding: 0px 10px;
-    }
+        /* Add more styles as needed */
+    </style>
 
-    /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-    @media screen and (max-height: 450px) {
-      .sidenav {
-        padding-top: 15px;
-      }
+    <!-- jQuery (required for Bootstrap JavaScript) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-      .sidenav a {
-        font-size: 18px;
-      }
-    }
-  </style>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <title>{% block title %}Jeremy's Site{% endblock %}</title>
+    <!-- Your custom scripts -->
+    <script>
+        // Add your custom scripts here
+    </script>
 </head>
 
 <body>
-  <!-- Side navigation -->
-  <div class="sidenav">
-    <a href="/">Home</a>
-    <a href="/view">View</a>
-    <a href="/create">Create</a>
-  </div>
 
-  <!-- Page content -->
-  <div class="main">
-    <div class="row justify-content-center">
-      <div class="col-8">
-        <h1 class="mt-2">Tech Innovation with Jeremy</h1>
-        <hr class="mt-0 mb-4">
-        {% block content %}
-        {% endblock %}
-      </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Your Website</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Blog
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="blogDropdown">
+                            <a class="dropdown-item" href="#">Subsite 1</a>
+                            <a class="dropdown-item" href="#">Subsite 2</a>
+                            <a class="dropdown-item" href="#">Subsite 3</a>
+                            <!-- Add more subsite links as needed -->
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Docs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <!-- Add more navigation links as needed -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page content -->
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
     </div>
-  </div>
 
-  </div>
-
-
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">© 2024 Your Website. All rights reserved.</span>
+        </div>
+        <!-- Append the provided content below -->
+        <div class="container mt-3">
+            <p>Your additional footer content goes here.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
